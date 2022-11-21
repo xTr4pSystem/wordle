@@ -9,12 +9,11 @@ PULL REQUESTS WELCOME!
 It would be mega awesome if you could help in any way (especially with language addition/curation).
 
 **How to add a new language:**
-
 1. Make a folder in webapp/data/languages/ with the language code (e.g. en, de, fr, qya, etc.)
-2. Add a list of 5-letter words and call it {lang_code}\_5words.txt
-   1. (Optional) Add a language_config.json file
-   2. (Optional) Add a keyboard configuration
-   3. (Optional) Add a list of supplemental words (useful to have this for weird/rare words, and only have 'common' words in the main 5words.txt file)
+2. Add a list of 5-letter words and call it {lang_code}_5words.txt
+    1. (Optional) Add a language_config.json file
+    2. (Optional) Add a keyboard configuration 
+    3. (Optional) Add a list of supplemental words (useful to have this for weird/rare words, and only have 'common' words in the main 5words.txt file)
 
 Voilà!
 
@@ -25,21 +24,22 @@ If you want to test out your changes, you can run the server locally.
 1. Install Python 3
 
 2. Install requirements
-   `pip3 install -r requirements.txt`
+```pip3 install -r requirements.txt```
 
 3. Run web server locally
-   `gunicorn --chdir webapp app:app`
+```gunicorn --chdir webapp app:app```
 
 4. Navigate to [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-# Using docker
+## Using docker for deployment
 
 1. Make sure you have docker installed.
-2. Run docker build . -t wordle
-3. Run docker run -d -p 8000:8000 wordle
+2. Run 
+```docker build . -t wordle```
+3. Run 
+```docker run -d -p 8000:8000 wordle```
 
 ## TODOs
-
 - [ ] take into account browser bar height on mobile
 - [ ] curate wordlists for existing languages
 - [ ] add keyboard layouts for existing languages
@@ -47,20 +47,17 @@ If you want to test out your changes, you can run the server locally.
 - [ ] fully translate game interface (missing score streaks and options)
 
 Potential improvements:
-
 - [ ] nice animations for revealing letters & such
 - [ ] make a 4, 6, 7 letter version
 - [ ] deal with accents & character modifiers better (e.g. french is horrible right now)
 
 Nice to haves:
-
 - [ ] improve code quality (e.g. make variable names consistent, code more reusable & less hacky)
 - [ ] properly integrate TailwindCSS and Vue.js (i.e. not from CDN)
 - [ ] tests...
 
 ## Status of Languages
-
-```
+```  
   - Hebrew (he):                   🟨 (64540 words)
   - Serbian (sr):                  🟨 (17968 words)
   - Central Kurdish (ckb):         🟩 (14819 words)
@@ -130,7 +127,6 @@ Nice to haves:
 ![](scripts/out/n_words.png)
 
 ## Credits:
-
 - Josh Wardle (original Wordle creator)
 - NYT (presumably holds the copyright or some IP rights or something with their $$$ purchase)
 - Elizabeth S (inventor of the Wordle grid)
@@ -139,7 +135,6 @@ Nice to haves:
 - [Wordles of the World](https://gitlab.com/rwmpelstilzchen/wordles) for a community-sourced list of wordle-derivatives (it's impressive how many actually exist)
 
 ## Data sources
-
 - https://www.nytimes.com/games/wordle/index.html - english word list
 - https://kaino.kotus.fi/sanat/nykysuomi/ - Finnish word list
 - https://github.com/wooorm/dictionaries - most other word lists ([Titus Wormer](https://wooorm.com/) is an incredible dude)
